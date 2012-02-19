@@ -1,0 +1,9 @@
+#!/bin/sh
+make cooper_defconfig
+make -j 2
+if [ "$?" == "0" ]
+then
+cd ramdisk
+./repack_bootimg.pl ../arch/arm/boot/zImage ./ramdisk_cooper ../boot.img
+cd ..
+fi
