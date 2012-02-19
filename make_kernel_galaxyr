@@ -1,9 +1,9 @@
 #!/bin/sh
-make cooper_defconfig
+make galaxyr_defconfig
 make -j 2
 if [ "$?" == "0" ]
 then
 cd ramdisk
-./repack_bootimg.pl ../arch/arm/boot/zImage ./ramdisk_cooper ../boot.img
+./repack_bootimg.pl ../arch/arm/boot/zImage ./ramdisk_galaxyr ../boot.img
 cd ..
 fi
